@@ -1,0 +1,25 @@
+// you can write to stdout for debugging purposes, e.g.
+// print "this is a debug message\n";
+
+function solution($N) {
+    // write your code in PHP7.0
+    $N = decbin($N);
+    //$char_aray = str_split($N.'');
+    $gaps =0;
+    //split string via 1 
+    $explode_array = explode('1',$N.'');
+    
+    if(sizeof($explode_array) < 3 ){
+        return 0;
+    } else {
+        foreach($explode_array as $array_item){
+            if($gaps < strlen($array_item)){
+                $gaps = strlen($array_item);
+            }
+        }
+    }
+    return $gaps;
+}
+
+
+

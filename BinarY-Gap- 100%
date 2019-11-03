@@ -1,0 +1,27 @@
+
+
+function solution($N) {
+    // write your code in PHP7.0
+    $N = decbin($N);
+    //$char_aray = str_split($N.'');
+    $gaps =0;
+    //split string via 1 
+    $explode_array = explode('1',$N.'');
+    
+    if(sizeof($explode_array) < 3 ){
+        return 0;
+    } else {
+        $array_size = sizeof($explode_array);
+        $i=1;
+        //print $array_size;
+        foreach($explode_array as $array_item){
+            //print $i;
+            if($gaps < strlen($array_item) && $i < $array_size){
+                $gaps = strlen($array_item);
+            }
+            $i++;
+        }
+    }
+    return $gaps;
+}
+

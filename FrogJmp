@@ -1,0 +1,6 @@
+function solution($X, $Y, $D) {
+    // write your code in PHP7.0
+    $distanceToTravel = $Y - $X;
+    $stepsCount = ceil($distanceToTravel/$D);
+    return intval($stepsCount);
+}
